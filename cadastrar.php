@@ -26,5 +26,3 @@ if ($numRows == 1) {
    }
 }
 ?>
-
-pagina de cadastração

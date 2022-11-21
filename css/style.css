@@ -24,8 +24,9 @@ body {
 }
 
 h1 {
+    font-family: 'Retrolight', sans-serif;
     color: wheat;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .tit {

@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     
+<link href="https://fonts.cdnfonts.com/css/retrolight" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,10 @@
 
 
     <div class="topo">
-    LOREM IPSUM MARKET
+    <h1>LOREM IPSUM MARKET</h1>
     </div>
     <section class="interface">
-    <img class="atomo-left" src="img/americanas.png" alt="atomo"><img class="atomo-right" src="img/americanas.png" alt="atomo">
-
+    
     <!-- <h1 class="tit"><img class="user-icon" src="img/user-286.png" alt="user"> ÁREA DO CLIENTE</h1> -->
 
     <h2>Acesse sua conta para realizar pedidos e ver histórico de compras.</h2>

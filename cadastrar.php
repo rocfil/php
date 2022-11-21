@@ -25,4 +25,3 @@ if ($numRows == 1) {
     exit;
    }
 }
-?>

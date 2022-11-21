@@ -17,7 +17,7 @@
 
 
     <div class="topo">
-    LOJAS AMERICANAS
+    LOREM IPSUM MARKET
     </div>
     <section class="interface">
     <img class="atomo-left" src="img/americanas.png" alt="atomo"><img class="atomo-right" src="img/americanas.png" alt="atomo">

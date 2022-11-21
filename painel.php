@@ -29,20 +29,23 @@ include('conexao.php');
             <img class="bancodedados" src="./img/bancodedados.jpg" alt="bancodedados">
         </div>
         <div>
-            <p>Papel higiênico de alta qualidade <button class="btn btn-outline-danger">Comprar</button></p>
+            <p>Produto para higiene de alta qualidade <button class="btn btn-outline-danger">Comprar</button></p>
             <img class="bancodedados" src="./img/papel-google.jpg" alt="bancodedados">
         </div>
+        <a href="logout.php">
+            <button  class="btn btn-danger"> 
+                Sair
+            </button>
+        </a>
+        <a href="cadastro.php"><button class="btn btn-light">Cadastrar novo usuário</button></a>
     </section>
-        <button href="logout.php" class="btn btn-danger" style="margin-bottom: 100px;">
-            Sair
-        </button>
     <?php
     //Consulta PHP para retornar informações do Usuário
     $query = "SELECT * FROM usuario";
     $result = mysqli_query($conexao, $query);
     ?>
-    <button class="btn btn-light"><a href="cadastro.php">Cadastrar novo usuário</a></button>
-    <table>
+    <br><br>
+    <table align="center" class="d-flex justify-content-center">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -59,7 +62,7 @@ include('conexao.php');
             $senha = $linha['senha'];
         ?>
         <!--Codigo HTML / Denhar as linhas da tabela  -->
-        <tr style="align-items: center;">
+        <tr >
             <td><?php echo $id ?></td>
             <td><?php echo $nome ?></td>
             <td><?php echo $email ?></td>
@@ -67,9 +70,11 @@ include('conexao.php');
             <td><a href="editar.php?id=<?php echo $id ?>"><button class="btn btn-primary">Editar</button></a>
             <td><a href="excluir.php?id=<?php echo $id?>"><button class="btn btn-primary">Excluir</button></a></td></td>
         </tr>
+        
         <?php
         }
         ?>
+    </table>
         <?php 
     if(isset($_SESSION['usuario_excluido'])) {
         echo "<script>alert('Usuário excluido com sucesso')</script>";

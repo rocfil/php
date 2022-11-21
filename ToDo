@@ -1,0 +1,3 @@
+1 - Verificar mensagem de erro : Warning: Undefined array key "id" in C:\xampp\htdocs\php\excluir.php on line 5
+
+2 - Verificar se o usuário que será excluído é o mesmo que está logado. Se for, retorne uma mensagem de erro.

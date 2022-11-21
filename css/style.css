@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    text-align: center;
+    
+    /* background: rgb(17, 9, 43); */
+    content: none;
+    color: azure;
+}
+
+body {
+    background: rgb(150, 146, 146);
+}
+
+.interface {
+    background-color: rgb(150, 146, 146);
+}
+
+.topo {
+    font-size: 25px;
+    font-weight: 800;
+    padding: 18px;
+    background: linear-gradient(red, rgb(150, 146, 146));
+    
+}
+
+h1 {
+    color: wheat;
+    font-size: 50px;
+}
+
+.tit {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+h2 {
+    color: wheat;
+}
+
+h3 {
+    color: red;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: black;
+}
+
+.entrada {
+    background-color: black;
+    border-radius: 10%;
+    height: 20px;
+    width: 200px;
+}
+
+.user-icon {
+    position: relative;
+    width: 35px;
+}
+
+.atomo-left {
+    position: absolute;
+    left: 10%;
+    width: 100px;
+    opacity: 0.5;
+}
+
+.cart {
+    position: absolute;
+    right: 10%;
+    width: 70px;
+}
+
+.atomo-right {
+    position: absolute;
+    right: 10%;
+    width: 100px;
+    opacity: 0.5;
+}
+
+.login-button {
+    background-color: oldlace;
+    border-radius: 10%;
+    color: black;
+    font-weight: 900;
+    margin-top: 25px;
+    font-size: 1rem;
+}
+
+.login-button:hover {
+    background-color: red;
+}
+
+/* img:hover {
+    transition-duration: 1s;
+    width: 200px;
+} 
+img:not(:hover) {
+    transition-duration: 1s;
+    width: 100px;
+} */
+
+.bancodedados {
+    border-radius: 15%;
+    margin-bottom: 25px;
+    width: 20%;
+    height: auto;
+    padding: 12px;
+}
+
+button {
+    color: black;
+}

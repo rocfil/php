@@ -13,6 +13,7 @@
         $nome = $dadosUsuario['nome'];
         $email = $dadosUsuario['email'];
         $senha = $dadosUsuario['senha'];
+        $adm = $dadosUsuario['adm'];
         }
 
     if(isset($_POST['salvar'])) {
@@ -20,9 +21,10 @@
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $adm = $_POST['adm'];
         $id = $_POST['id'];
         // atualiza no banco de dados
-        $query = "UPDATE usuario SET nome = '{$nome}', email = '{$email}', senha = '{$senha}' WHERE id = {$id}";
+        $query = "UPDATE usuario SET nome = '{$nome}', email = '{$email}', senha = '{$senha}', adm = '{$adm}' WHERE id = {$id}";
         $result = mysqli_query($conexao, $query);
         $_SESSION["usuario_alterado"] = true;
         header('location: painel.php');
@@ -65,6 +67,11 @@
     <br>
     <p>Senha:</p>    
     <input value="<?php echo $senha ?>" class="entrada" name="senha" type="text" placeholder="insira senha">
+    <p>Administrador</p>
+        <select style="color: red;" name="adm">
+            <option style="color: black;" value="nao">NÃO</option>
+            <option style="color: black;" value="sim">SIM</option>
+        </select>
       </div>
      <button class="login-button" type="submit" name="salvar">Salvar</button>
      </form>

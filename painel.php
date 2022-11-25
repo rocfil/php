@@ -1,6 +1,7 @@
 <?php
 session_start();
 $usuario = $_SESSION['usuario'];
+// $adm = $_SESSION['adm'];
 include('verificacao.php');
 include('conexao.php');
 ?>
@@ -11,6 +12,7 @@ include('conexao.php');
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/retrolight" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do usuário</title>
@@ -19,11 +21,12 @@ include('conexao.php');
     
     
     <div class="topo">
-        <h2>Painel do usuário<img class="cart" src="./img/shoppingcart.png" alt="cart"></h2>
+        <h1>Painel do usuário<img class="cart" src="./img/shoppingcart.png" alt="cart"></h1>
     </div>
     <section class="interface">
         <h2>Bem vindo(a), <?php echo $usuario ?></h2>
-        <h2>Novos itens à venda:</h2>
+        <p><?php if($adm = 'sim') {echo "ADMINISTRADOR";}?></p>
+        <h2 style="border-top: black double 2px">Novos itens à venda:</h2>
         <div>
             <p>Banco de dados com frete grátis <button class="btn btn-outline-danger">Comprar</button></p>
             <img class="bancodedados" src="./img/bancodedados.jpg" alt="bancodedados">
@@ -39,7 +42,10 @@ include('conexao.php');
         </a>
         <a href="cadastro.php"><button class="btn btn-light">Cadastrar novo usuário</button></a>
     </section>
+
     <?php
+
+
     //Consulta PHP para retornar informações do Usuário
     $query = "SELECT * FROM usuario";
     $result = mysqli_query($conexao, $query);
@@ -51,6 +57,7 @@ include('conexao.php');
             <th>Nome</th>
             <th>E-mail</th>
             <th>Senha</th>
+            <th>Administrador</th>
         </tr>
         <?php
         //enquanto existir dados na minha variavel $result
@@ -60,6 +67,7 @@ include('conexao.php');
             $nome = $linha['nome'];
             $email = $linha['email'];
             $senha = $linha['senha'];
+            $adm = $linha['adm'];
         ?>
         <!--Codigo HTML / Denhar as linhas da tabela  -->
         <tr >
@@ -67,6 +75,7 @@ include('conexao.php');
             <td><?php echo $nome ?></td>
             <td><?php echo $email ?></td>
             <td><?php echo $senha ?></td>
+            <td><?php echo $adm ?></td>
             <td><a href="editar.php?id=<?php echo $id ?>"><button class="btn btn-primary">Editar</button></a>
             <td><a href="excluir.php?id=<?php echo $id?>"><button class="btn btn-primary">Excluir</button></a></td></td>
         </tr>

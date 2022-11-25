@@ -29,19 +29,21 @@
 
     <form action="cadastrar.php" method="GET">
     <div>
-
-    <p>Seu nome:</p>
-    <input class="entrada" name="nome" type="text" placeholder="ex: João">
-    <p>Usuário:</p>
-    <input class="entrada" name="email" type="email" placeholder="ex: joaodasilva@yahoo.com">
-    <br>
-    <p>Crie uma senha:</p>
+        <p>Seu nome:</p>
+        <input class="entrada" name="nome" type="text" placeholder="ex: João">
+        <p>Usuário:</p>
+        <input class="entrada" name="email" type="email" placeholder="ex: joaodasilva@yahoo.com">
+        <br>
+        <p>Crie uma senha:</p>
+            
+        <input class="entrada" name="senha" type="password" placeholder="insira senha">
         
-    <input class="entrada" name="senha" type="password" placeholder="insira senha">
-      </div>
+    </div>
      <button class="login-button" type="submit">Cadastrar</button>
      </form>
-     <?php 
+
+     <?php
+
     if(isset($_SESSION['usuario_cadastrado'])) {
         echo "<h3>Este email já está cadastrado</h3>";
     }

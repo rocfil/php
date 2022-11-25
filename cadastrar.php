@@ -17,11 +17,11 @@ if ($numRows == 1) {
     exit;
 } else {
     // Insere os dados do usuário caso o mesmo não existe.
-   $query = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES (NULL, '{$nome}', '{$email}', '{$senha}')";
+   $query = "INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `adm`) VALUES (NULL, '{$nome}', '{$email}', '{$senha}', 'nao')";
    if ($conexao -> query($query) === true) {
     // Se inseriu os dados corretamente, retorna a mensagem para o painel do usuário.
-    $_SESSION['usuario_cadastrado'] = true;
-    header("location: painel.php");
+    $_SESSION['usuario'] = $nome;
+    header("location: painelcomum.php");
     exit;
    }
 }

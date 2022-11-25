@@ -22,6 +22,7 @@ if(empty($email) || empty($senha)) {
 
 // -------- Consulta no banco de dados ----------
 $query = "SELECT * FROM `usuario` WHERE email = '{$email}' AND senha = '{$senha}'";
+
 $result = mysqli_query($conexao, $query);
 $numRows = mysqli_num_rows($result);
 // captura informações do usuário
@@ -30,9 +31,14 @@ $dadosdousuario = mysqli_fetch_assoc($result);
 
 // Usuário existe no banco de dados
 if($numRows == 1) {
-    $_SESSION['usuario'] = $dadosdousuario['nome'];
-    // redireciona o usuário logado para a página de login
-    header('location: painel.php');
+    if($dadosdousuario['adm'] == "sim") {
+        $_SESSION['usuario'] = $dadosdousuario['nome'];
+        // redireciona o usuário logado para a página de login DE ADMINISTRADOR
+        header('location: painel.php');
+    } else {
+        $_SESSION['usuario'] = $dadosdousuario['nome'];
+        header('location: painelcomum.php');
+    }
 } else {
     header('location: index.php');
     $_SESSION['usuario_invalido'] = $email;
